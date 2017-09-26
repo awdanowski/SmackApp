@@ -15,6 +15,7 @@
 		1C0499CA1F7ACA5C004C846F /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0499C91F7ACA5C004C846F /* ChatVC.swift */; };
 		1C0499CC1F7ACBF0004C846F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0499CB1F7ACBF0004C846F /* MainWindowController.swift */; };
 		1C29C4C01F7ACD570042A790 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C29C4BF1F7ACD570042A790 /* Constants.swift */; };
+		1C29C4C21F7AE8C20042A790 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C29C4C11F7AE8C10042A790 /* NSButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		1C0499C91F7ACA5C004C846F /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		1C0499CB1F7ACBF0004C846F /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		1C29C4BF1F7ACD570042A790 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1C29C4C11F7AE8C10042A790 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1C29C4BF1F7ACD570042A790 /* Constants.swift */,
+				1C29C4C11F7AE8C10042A790 /* NSButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				1C0499B31F7AC87B004C846F /* AppDelegate.swift in Sources */,
 				1C0499CC1F7ACBF0004C846F /* MainWindowController.swift in Sources */,
 				1C29C4C01F7ACD570042A790 /* Constants.swift in Sources */,
+				1C29C4C21F7AE8C20042A790 /* NSButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

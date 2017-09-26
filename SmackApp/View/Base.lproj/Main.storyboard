@@ -923,7 +923,7 @@
                 </viewController>
                 <customObject id="8eL-dR-sYh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="775.5"/>
+            <point key="canvasLocation" x="702" y="1112"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="SJC-WZ-JBK">
@@ -1084,7 +1084,7 @@
                 </viewController>
                 <customObject id="TlD-JU-gDV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="1194"/>
+            <point key="canvasLocation" x="727" y="1604"/>
         </scene>
     </scenes>
     <resources>

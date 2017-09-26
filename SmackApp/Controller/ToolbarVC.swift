@@ -8,6 +8,10 @@
 
 import Cocoa
 
+enum ModalType {
+	case login
+}
+
 class ToolbarVC: NSViewController {
 
 	// Outlets
@@ -16,6 +20,9 @@ class ToolbarVC: NSViewController {
 	@IBOutlet weak var loginImage: NSImageView!
 	@IBOutlet weak var loginStack: NSStackView!
 	
+	// Variables
+	
+	var modalBGView: ClickBlockingView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,8 @@ class ToolbarVC: NSViewController {
 	}
 	
 	func setUpView() {
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal), name: NOTIFICATION_PRESENT_MODAL, object: nil)
 		
 		view.wantsLayer = true
 		view.layer?.backgroundColor = chatGreen.cgColor
@@ -41,6 +50,31 @@ class ToolbarVC: NSViewController {
 	
 	@objc func openProfilePage(_ recognizer: NSClickGestureRecognizer) {
 		
-		print("Open profile page")
+		let loginDictionary: [String: ModalType] = [USER_INFO_MODAL: ModalType.login]
+		NotificationCenter.default.post(name: NOTIFICATION_PRESENT_MODAL, object: nil, userInfo: loginDictionary)
+	}
+	
+	@objc func presentModal(_ notification: Notification) {
+		
+		print("Present login modal")
+		if modalBGView == nil {
+			modalBGView = ClickBlockingView()
+			modalBGView.translatesAutoresizingMaskIntoConstraints = false
+			
+			view.addSubview(modalBGView, positioned: .above, relativeTo: loginStack)
+			
+			let topConstraint = NSLayoutConstraint(item: modalBGView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 50)
+			let leftConstraint = NSLayoutConstraint(item: modalBGView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
+			let rightConstraint = NSLayoutConstraint(item: modalBGView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
+			let bottomConstraint = NSLayoutConstraint(item: modalBGView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+
+			view.addConstraints([topConstraint, leftConstraint, rightConstraint, bottomConstraint])
+			
+			modalBGView.layer?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+			modalBGView.alphaValue = 1.0
+		}
+		
+		
+		
 	}
 }

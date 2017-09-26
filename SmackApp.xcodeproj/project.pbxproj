@@ -16,6 +16,7 @@
 		1C0499CC1F7ACBF0004C846F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0499CB1F7ACBF0004C846F /* MainWindowController.swift */; };
 		1C29C4C01F7ACD570042A790 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C29C4BF1F7ACD570042A790 /* Constants.swift */; };
 		1C29C4C21F7AE8C20042A790 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C29C4C11F7AE8C10042A790 /* NSButton.swift */; };
+		1C29C4C61F7AF1A00042A790 /* ClickBlockingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C29C4C51F7AF1A00042A790 /* ClickBlockingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		1C0499CB1F7ACBF0004C846F /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		1C29C4BF1F7ACD570042A790 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C29C4C11F7AE8C10042A790 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
+		1C29C4C51F7AF1A00042A790 /* ClickBlockingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickBlockingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				1C0499B81F7AC87B004C846F /* Main.storyboard */,
 				1C0499B61F7AC87B004C846F /* Assets.xcassets */,
+				1C29C4C51F7AF1A00042A790 /* ClickBlockingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				1C0499C61F7ACA3F004C846F /* ToolbarVC.swift in Sources */,
 				1C0499C81F7ACA4E004C846F /* ChannelVC.swift in Sources */,
 				1C0499B31F7AC87B004C846F /* AppDelegate.swift in Sources */,
+				1C29C4C61F7AF1A00042A790 /* ClickBlockingView.swift in Sources */,
 				1C0499CC1F7ACBF0004C846F /* MainWindowController.swift in Sources */,
 				1C29C4C01F7ACD570042A790 /* Constants.swift in Sources */,
 				1C29C4C21F7AE8C20042A790 /* NSButton.swift in Sources */,

@@ -36,8 +36,9 @@ class ToolbarVC: NSViewController {
 	
 	func setUpView() {
 		
-		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal), name: NOTIFICATION_PRESENT_MODAL, object: nil)
-		
+		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal(_:)), name: NOTIFICATION_PRESENT_MODAL, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.closeModalNotification(_:)), name: NOTIFICATION_CLOSE_MODAL, object: nil)
+
 		view.wantsLayer = true
 		view.layer?.backgroundColor = chatGreen.cgColor
 
@@ -116,32 +117,42 @@ class ToolbarVC: NSViewController {
 		
 	}
 	
-	@objc func closeModalClick(_ recognizer: NSClickGestureRecognizer) {
-		
-		closeModal()
-		
+	@objc func closeModalNotification(_ notification: Notification) {
+		if let removeImmediately = notification.userInfo?[USER_INFO_REMOVE_IMMEDIATELY] as? Bool {
+			closeModal(removeImmediately)
+		} else {
+			closeModal()
+		}
 	}
 	
-	func closeModal() {
+	@objc func closeModalClick(_ recognizer: NSClickGestureRecognizer) {
+		closeModal()
+	}
+	
+	func closeModal(_ removeImmediately: Bool = false) {
 		
-		NSAnimationContext.runAnimationGroup({ (context) in
-			
-			context.duration = 0.5
-			modalBGView.animator().alphaValue = 0.0
-			modalView.animator().alphaValue = 0.0
-			self.view.layoutSubtreeIfNeeded()
-			
-		}, completionHandler: {
-			
-			if self.modalBGView != nil {
+		if removeImmediately {
+			self.modalView.removeFromSuperview()
+		} else {
+			NSAnimationContext.runAnimationGroup({ (context) in
 				
-				self.modalBGView.removeFromSuperview()
-				self.modalBGView = nil
+				context.duration = 0.5
+				modalBGView.animator().alphaValue = 0.0
+				modalView.animator().alphaValue = 0.0
+				self.view.layoutSubtreeIfNeeded()
 				
-				self.modalView.removeFromSuperview()
-				self.modalView = nil
+			}, completionHandler: {
 				
-			}
-		})
+				if self.modalBGView != nil {
+					
+					self.modalBGView.removeFromSuperview()
+					self.modalBGView = nil
+					
+					self.modalView.removeFromSuperview()
+					self.modalView = nil
+					
+				}
+			})
+		}
 	}
 }

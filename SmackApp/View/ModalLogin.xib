@@ -37,17 +37,20 @@
                         <stackView distribution="fill" orientation="vertical" alignment="trailing" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9Q-wo-Y5T" userLabel="Email Stack View">
                             <rect key="frame" x="0.0" y="82" width="200" height="26"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-G3-AF8" userLabel="Email">
+                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-G3-AF8" userLabel="Email">
                                     <rect key="frame" x="-2" y="2" width="204" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="NUK-Pd-sZC"/>
                                         <constraint firstAttribute="width" constant="200" id="njw-4P-rxa"/>
                                     </constraints>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="email" id="iv9-jk-M95">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="email" id="iv9-jk-M95">
                                         <font key="font" size="13" name="AvenirNext-Regular"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
+                                    <connections>
+                                        <outlet property="nextKeyView" destination="h2K-Fr-tpT" id="2wG-AR-gOq"/>
+                                    </connections>
                                 </textField>
                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-ZO-kO3">
                                     <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
@@ -68,13 +71,13 @@
                         <stackView distribution="fill" orientation="vertical" alignment="trailing" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaJ-yh-Nhn" userLabel="Password Stack View">
                             <rect key="frame" x="0.0" y="44" width="200" height="26"/>
                             <subviews>
-                                <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2K-Fr-tpT" userLabel="Password">
+                                <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2K-Fr-tpT" userLabel="Password">
                                     <rect key="frame" x="-2" y="2" width="204" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="kfd-ti-Q1j"/>
                                         <constraint firstAttribute="width" constant="200" id="w8b-Rv-7u4"/>
                                     </constraints>
-                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="password" id="NfE-zP-PAE">
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="password" id="NfE-zP-PAE">
                                         <font key="font" size="13" name="AvenirNext-Regular"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -82,6 +85,9 @@
                                             <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                         </allowedInputSourceLocales>
                                     </secureTextFieldCell>
+                                    <connections>
+                                        <outlet property="nextKeyView" destination="KeU-G3-AF8" id="duV-vl-SlX"/>
+                                    </connections>
                                 </secureTextField>
                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="kXI-jS-aSQ">
                                     <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
@@ -159,6 +165,9 @@
                 <constraint firstItem="Alt-Ax-Vik" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="v4A-2U-QeY"/>
                 <constraint firstItem="QGV-oM-ChA" firstAttribute="top" secondItem="Alt-Ax-Vik" secondAttribute="bottom" constant="30" id="xBm-xj-PhT"/>
             </constraints>
+            <connections>
+                <outlet property="nextKeyView" destination="KeU-G3-AF8" id="7pv-JB-bRo"/>
+            </connections>
         </customView>
     </objects>
     <resources>

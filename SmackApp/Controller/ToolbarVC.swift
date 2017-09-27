@@ -10,6 +10,7 @@ import Cocoa
 
 enum ModalType {
 	case login
+	case createAccount
 }
 
 class ToolbarVC: NSViewController {
@@ -82,29 +83,36 @@ class ToolbarVC: NSViewController {
 			
 			modalBGView.addGestureRecognizer(closeBackgroundClick)
 			
-			// Instantiate XIB
-			
-			guard let modalType = notification.userInfo?[USER_INFO_MODAL] as? ModalType else { return }
-			
-			switch modalType {
-			case ModalType.login:
-				modalView = ModalLogin()
-				modalWidth = 475
-				modalHeight = 300
-			}
-			
-			modalView.wantsLayer = true
-			modalView.translatesAutoresizingMaskIntoConstraints = false
-			modalView.alphaValue = 0.0
-			view.addSubview(modalView, positioned: .above, relativeTo: modalBGView)
-			
-			let horizontalConstraint = modalView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-			let verticalConstraint = modalView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-			let widthConstraint = modalView.widthAnchor.constraint(equalToConstant: modalWidth)
-			let heightConstraint = modalView.heightAnchor.constraint(equalToConstant: modalHeight)
-			
-			NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
 		}
+		
+		// Instantiate Modal XIB
+		
+		guard let modalType = notification.userInfo?[USER_INFO_MODAL] as? ModalType else { return }
+		
+		switch modalType {
+			
+		case ModalType.login:
+			modalView = ModalLogin()
+			modalWidth = 475
+			modalHeight = 300
+		case ModalType.createAccount:
+			modalView = ModalCreateAccount()
+			modalWidth = 475
+			modalHeight = 300
+		}
+		
+		modalView.wantsLayer = true
+		modalView.translatesAutoresizingMaskIntoConstraints = false
+		modalView.alphaValue = 0.0
+		view.addSubview(modalView, positioned: .above, relativeTo: modalBGView)
+		
+		let horizontalConstraint = modalView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+		let verticalConstraint = modalView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+		let widthConstraint = modalView.widthAnchor.constraint(equalToConstant: modalWidth)
+		let heightConstraint = modalView.heightAnchor.constraint(equalToConstant: modalHeight)
+		
+		NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+
 		
 		NSAnimationContext.runAnimationGroup({ (context) in
 			

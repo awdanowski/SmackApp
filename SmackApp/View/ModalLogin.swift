@@ -54,9 +54,13 @@ class ModalLogin: NSView {
 	}
 	
 	@IBAction func createAccountButtonClicked(_ sender: Any) {
-		let closeImmediatelyDict:[String: Bool] = [USER_INFO_REMOVE_IMMEDIATELY: true]
 		
+		let closeImmediatelyDict:[String: Bool] = [USER_INFO_REMOVE_IMMEDIATELY: true]
 		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil, userInfo: closeImmediatelyDict)
+		
+		let createAccountDict:[String: ModalType] = [USER_INFO_MODAL: ModalType.createAccount]
+		NotificationCenter.default.post(name: NOTIFICATION_PRESENT_MODAL, object: nil, userInfo: createAccountDict)
+		
 	}
 	
 	func setUpView() {

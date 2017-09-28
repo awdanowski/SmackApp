@@ -52,6 +52,7 @@ class AuthService {
 		Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: URL_HEADER).responseString {
 			(response) in
 				if response.result.error == nil {
+					print("Response: \(response)")
 					completion(true)
 				} else {
 					completion(false)
@@ -74,11 +75,14 @@ class AuthService {
 				
 				let json = JSON(data: data)
 				
-				let userEmail = json["user"].stringValue
-				let authToken = json["token"].stringValue
+				let user = json["user"].stringValue
+				let token = json["token"].stringValue
 				
-				self.userEmail = userEmail
-				self.authToken = authToken
+				print("User: \(user)")
+				print(token)
+				
+				self.userEmail = user
+				self.authToken = token
 				self.isLoggedIn = true
 				
 				completion(true)
@@ -119,6 +123,8 @@ class AuthService {
 				let email = json["email"].stringValue
 				let avatarName = json["avatarName"].stringValue
 				let avatarColor = json["avatarColor"].stringValue
+				
+				print("Name: \(userName)")
 				
 				UserDataService.instance.initialize(id: id, name: userName, email: email, avatarName: avatarName, avatarColor: avatarColor)
 				

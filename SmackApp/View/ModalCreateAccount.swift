@@ -14,9 +14,16 @@ class ModalCreateAccount: NSView {
 	
 	@IBOutlet weak var view: NSView!
 	
-
+	@IBOutlet weak var nameText: NSTextField!
+	@IBOutlet weak var emailText: NSTextField!
+	@IBOutlet weak var passwordText: NSSecureTextField!
 	
+	@IBOutlet weak var profileImage: NSImageView!
 	
+	@IBOutlet weak var createAccountButton: NSButton!
+	@IBOutlet weak var chooseImageButton: NSButton!
+	
+	@IBOutlet weak var progressSpinner: NSProgressIndicator!
 	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
@@ -41,8 +48,17 @@ class ModalCreateAccount: NSView {
 		setUpView()
 	}
 	
+	@IBAction func closeModalClicked(_ sender: Any) {
+		
+		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
 
+	}
 	
+	@IBAction func createAccountClicked(_ sender: Any) {
+	}
+	
+	@IBAction func chooseAvatarClicked(_ sender: Any) {
+	}
 	
 	
 	
@@ -53,9 +69,18 @@ class ModalCreateAccount: NSView {
 		view.layer?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		view.layer?.cornerRadius = 7
 		
+		profileImage.layer?.cornerRadius = 10
+		profileImage.layer?.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+		profileImage.layer?.borderWidth = 3
+		
+		createAccountButton.layer?.backgroundColor = chatGreen.cgColor
+		createAccountButton.layer?.cornerRadius = 7
+		createAccountButton.styleButtonText(button: createAccountButton, buttonName: "Create Account", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 14.0)
+		
+		chooseImageButton.layer?.backgroundColor = chatGreen.cgColor
+		chooseImageButton.layer?.cornerRadius = 7
+		chooseImageButton.styleButtonText(button: chooseImageButton, buttonName: "Choose Avatar", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 14.0)
 
-		
-		
 	}
 }
 

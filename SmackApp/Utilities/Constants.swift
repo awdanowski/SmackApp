@@ -15,6 +15,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let URL_BASE = "https://mychattychatapp.herokuapp.com/v1/"
 let URL_REGISTER = "\(URL_BASE)account/register"
 let URL_LOGIN = "\(URL_BASE)account/login"
+let URL_USER_ADD = "\(URL_BASE)user/add"
 
 
 // Colors
@@ -41,3 +42,7 @@ let USER_INFO_REMOVE_IMMEDIATELY = "modalRemoveImmediately"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+// Headers
+
+let URL_HEADER = ["Content-Type": "application/json; charset=utf-8"]

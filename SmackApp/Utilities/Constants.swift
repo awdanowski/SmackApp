@@ -8,6 +8,15 @@
 
 import Cocoa
 
+typealias CompletionHandler = (_ Success: Bool) -> ()
+
+// URL Constants
+
+let URL_BASE = "https://mychattychatapp.herokuapp.com/v1/"
+let URL_REGISTER = "\(URL_BASE)account/register"
+let URL_LOGIN = "\(URL_BASE)account/login"
+
+
 // Colors
 
 let chatPurple = NSColor(calibratedRed: 0.30, green: 0.22, blue: 0.29, alpha: 1.00)
@@ -25,3 +34,10 @@ let NOTIFICATION_PRESENT_MODAL = Notification.Name("presentModal")
 let NOTIFICATION_CLOSE_MODAL = Notification.Name("closeModal")
 
 let USER_INFO_REMOVE_IMMEDIATELY = "modalRemoveImmediately"
+
+
+// AuthServices
+
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "loggedIn"
+let USER_EMAIL = "userEmail"

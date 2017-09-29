@@ -33,10 +33,11 @@ let AVENIR_BOLD = "AvenirNext-Bold"
 // Notifications
 
 let USER_INFO_MODAL = "modalUserInfo"
+let USER_INFO_REMOVE_IMMEDIATELY = "modalRemoveImmediately"
+
 let NOTIFICATION_PRESENT_MODAL = Notification.Name("presentModal")
 let NOTIFICATION_CLOSE_MODAL = Notification.Name("closeModal")
-
-let USER_INFO_REMOVE_IMMEDIATELY = "modalRemoveImmediately"
+let NOTIFICATION_USER_DATA_CHANGED = Notification.Name("userDataChanged")
 
 
 // AuthServices

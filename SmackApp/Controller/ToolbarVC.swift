@@ -28,17 +28,18 @@ class ToolbarVC: NSViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
     }
 	
 	override func viewWillAppear() {
 		setUpView()
+
 	}
 	
 	func setUpView() {
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal(_:)), name: NOTIFICATION_PRESENT_MODAL, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.closeModalNotification(_:)), name: NOTIFICATION_CLOSE_MODAL, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
 
 		view.wantsLayer = true
 		view.layer?.backgroundColor = chatGreen.cgColor
@@ -163,4 +164,30 @@ class ToolbarVC: NSViewController {
 			})
 		}
 	}
+	
+	@objc func userDataDidChange(_ notification: Notification) {
+		
+		if AuthService.instance.isLoggedIn {
+
+			loginLabel.stringValue = UserDataService.instance.name
+			loginImage.wantsLayer = true
+			loginImage.layer?.cornerRadius = 5
+			loginImage.layer?.borderColor = CGColor.white
+			loginImage.layer?.borderWidth = 1
+			
+			// ADD AVATAR COLOR
+			
+			loginImage.image = NSImage(named: NSImage.Name(rawValue: UserDataService.instance.avatarName))
+			
+		} else {
+			loginLabel.stringValue = "Login"
+			loginImage.wantsLayer = true
+			loginImage.layer?.borderWidth = 0
+			loginImage.layer?.backgroundColor = CGColor.clear
+			loginImage.image = #imageLiteral(resourceName: "profileDefault")
+
+		}
+		
+	}
+
 }

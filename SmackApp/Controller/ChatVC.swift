@@ -23,9 +23,13 @@ class ChatVC: NSViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+	}
+	
+	override func viewWillAppear() {
 		setUpView()
-   }
+		NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
+
+	}
 	
 	func setUpView() {
 		
@@ -43,6 +47,16 @@ class ChatVC: NSViewController {
 		
 	}
 	
+	@objc func userDataDidChange(_ notification: Notification) {
+		
+		if AuthService.instance.isLoggedIn {
+			
+		} else {
+
+		}
+		
+	}
+
 	@IBAction func sendMessageButtonClicked(_ sender: Any) {
 	}
 	

@@ -804,8 +804,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iAQ-br-xIT">
-                                <rect key="frame" x="62" y="362" width="77" height="23"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="awdanowski" id="S1M-DQ-gZD">
+                                <rect key="frame" x="6" y="362" width="188" height="23"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="S1M-DQ-gZD">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -904,8 +904,10 @@
                             <constraint firstItem="dnG-b5-YgQ" firstAttribute="leading" secondItem="0he-BN-l6V" secondAttribute="leading" id="1zm-m9-iLp"/>
                             <constraint firstItem="iAQ-br-xIT" firstAttribute="top" secondItem="0he-BN-l6V" secondAttribute="top" constant="8" id="2Sb-xo-F8P"/>
                             <constraint firstItem="bZi-vX-pSQ" firstAttribute="top" secondItem="iAQ-br-xIT" secondAttribute="bottom" constant="8" id="BIZ-Tt-Tu4"/>
+                            <constraint firstItem="iAQ-br-xIT" firstAttribute="leading" secondItem="0he-BN-l6V" secondAttribute="leading" constant="8" id="EhG-6a-ztl"/>
                             <constraint firstItem="iAQ-br-xIT" firstAttribute="centerX" secondItem="0he-BN-l6V" secondAttribute="centerX" id="F82-Mk-lRg"/>
                             <constraint firstAttribute="trailing" secondItem="dnG-b5-YgQ" secondAttribute="trailing" id="OJN-XF-br1"/>
+                            <constraint firstAttribute="trailing" secondItem="iAQ-br-xIT" secondAttribute="trailing" constant="8" id="QwB-RB-X9c"/>
                             <constraint firstItem="PsX-bj-kow" firstAttribute="leading" secondItem="0he-BN-l6V" secondAttribute="leading" constant="10" id="eV2-A7-7IN"/>
                             <constraint firstItem="PsX-bj-kow" firstAttribute="top" secondItem="bZi-vX-pSQ" secondAttribute="bottom" constant="8" id="h8k-JI-A83"/>
                             <constraint firstItem="bZi-vX-pSQ" firstAttribute="leading" secondItem="0he-BN-l6V" secondAttribute="leading" constant="10" id="hHy-ih-UpU"/>

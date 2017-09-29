@@ -59,8 +59,8 @@ class ModalLogin: NSView {
 					if success {
 						NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
 						
-						print(UserDataService.instance.name)
-						print(UserDataService.instance.avatarName)
+						NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
+						
 					}
 				})
 			}

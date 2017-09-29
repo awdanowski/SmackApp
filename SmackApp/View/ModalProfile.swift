@@ -33,8 +33,6 @@ class ModalProfile: NSView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	
-	
 	override func draw(_ dirtyRect: NSRect) {
 		super.draw(dirtyRect)
 		
@@ -46,6 +44,9 @@ class ModalProfile: NSView {
 	func setUpView() {
 		
 		self.view.frame = NSRect(x: 0, y: 0, width: 475, height: 300)
+		
+		nameLabel.stringValue = UserDataService.instance.name
+		emailLabel.stringValue = UserDataService.instance.email
 		
 		view.layer?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		view.layer?.cornerRadius = 7
@@ -62,8 +63,17 @@ class ModalProfile: NSView {
 		// TODO - Add Avatar background color
 		
 	}
-
+	@IBAction func closeButtonClicked(_ sender: Any) {
+		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
+	}
+	
 	@IBAction func logoutButtonClicked(_ sender: Any) {
+		
+		print("Logout Button Pressed")
+		UserDataService.instance.logoutUser()
+		NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
+		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
+		
 	}
 	
 }

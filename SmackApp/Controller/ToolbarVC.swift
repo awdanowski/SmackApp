@@ -33,7 +33,11 @@ class ToolbarVC: NSViewController {
 	
 	override func viewWillAppear() {
 		setUpView()
-
+		if AuthService.instance.isLoggedIn {
+			AuthService.instance.findUserByEmail(completion: { (success) in
+				NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
+			})
+		}
 	}
 	
 	func setUpView() {

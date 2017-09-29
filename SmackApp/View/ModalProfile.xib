@@ -37,6 +37,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="closeButtonClicked:" target="-2" id="nBf-3C-e7F"/>
+                    </connections>
                 </button>
                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPD-u5-bKG">
                     <rect key="frame" x="20" y="119" width="200" height="62"/>

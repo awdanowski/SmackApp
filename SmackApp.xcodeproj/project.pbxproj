@@ -24,7 +24,6 @@
 		1C60D9BA1F7D853200F65568 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60D9B91F7D853200F65568 /* UserDataService.swift */; };
 		1C60D9BE1F7E978C00F65568 /* ModalProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C60D9BD1F7E978C00F65568 /* ModalProfile.xib */; };
 		1C60D9C01F7E97B100F65568 /* ModalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60D9BF1F7E97B100F65568 /* ModalProfile.swift */; };
-		1C60D9C61F7EAAD800F65568 /* FormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60D9C51F7EAAD800F65568 /* FormattedTextField.swift */; };
 		1C99CA861F7D588B003077AB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99CA851F7D588B003077AB /* AuthService.swift */; };
 		88255F50DC5585EB65F3D79D /* Pods_SmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7A90009BEA57C8AB2641C8 /* Pods_SmackApp.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +49,6 @@
 		1C60D9B91F7D853200F65568 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		1C60D9BD1F7E978C00F65568 /* ModalProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalProfile.xib; sourceTree = "<group>"; };
 		1C60D9BF1F7E97B100F65568 /* ModalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProfile.swift; sourceTree = "<group>"; };
-		1C60D9C51F7EAAD800F65568 /* FormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTextField.swift; sourceTree = "<group>"; };
 		1C99CA851F7D588B003077AB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C7A90009BEA57C8AB2641C8 /* Pods_SmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		924448F5A8727E34DF8A9DC0 /* Pods-SmackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackApp/Pods-SmackApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				1C60D9BF1F7E97B100F65568 /* ModalProfile.swift */,
 				1C60D9BB1F7E973100F65568 /* Modal Login */,
 				1C60D9BC1F7E973D00F65568 /* Modal Create Account */,
-				1C60D9C51F7EAAD800F65568 /* FormattedTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,7 +318,6 @@
 				1C99CA861F7D588B003077AB /* AuthService.swift in Sources */,
 				1C60D9BA1F7D853200F65568 /* UserDataService.swift in Sources */,
 				1C0499B31F7AC87B004C846F /* AppDelegate.swift in Sources */,
-				1C60D9C61F7EAAD800F65568 /* FormattedTextField.swift in Sources */,
 				1C29C4C61F7AF1A00042A790 /* ClickBlockingView.swift in Sources */,
 				1C60D9C01F7E97B100F65568 /* ModalProfile.swift in Sources */,
 				1C0499CC1F7ACBF0004C846F /* MainWindowController.swift in Sources */,

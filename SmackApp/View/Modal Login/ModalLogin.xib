@@ -12,6 +12,7 @@
                 <outlet property="createAccountButton" destination="QGV-oM-ChA" id="4PI-og-yBA"/>
                 <outlet property="loginButton" destination="tig-WY-8Db" id="7do-uT-dFR"/>
                 <outlet property="passwordText" destination="h2K-Fr-tpT" id="tfg-cP-dAs"/>
+                <outlet property="progressSpinner" destination="as7-d9-ejZ" id="rpe-qk-yQL"/>
                 <outlet property="stackView" destination="Alt-Ax-Vik" id="N28-Qh-WAf"/>
                 <outlet property="userNameText" destination="KeU-G3-AF8" id="kXI-gY-OeN"/>
                 <outlet property="view" destination="c22-O7-iKe" id="TNs-w3-OWs"/>
@@ -77,7 +78,7 @@
                                         <constraint firstAttribute="height" constant="24" id="kfd-ti-Q1j"/>
                                         <constraint firstAttribute="width" constant="200" id="w8b-Rv-7u4"/>
                                     </constraints>
-                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="password" id="NfE-zP-PAE">
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" focusRingType="none" placeholderString="password" id="NfE-zP-PAE">
                                         <font key="font" size="13" name="AvenirNext-Regular"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -86,6 +87,7 @@
                                         </allowedInputSourceLocales>
                                     </secureTextFieldCell>
                                     <connections>
+                                        <action selector="enterPasswordSent:" target="-2" id="uhe-QK-xOm"/>
                                         <outlet property="nextKeyView" destination="KeU-G3-AF8" id="duV-vl-SlX"/>
                                     </connections>
                                 </secureTextField>
@@ -156,11 +158,20 @@
                         <action selector="closeModalClicked:" target="-2" id="Hth-jz-BpM"/>
                     </connections>
                 </button>
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="as7-d9-ejZ">
+                    <rect key="frame" x="226" y="138" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="qKs-yJ-qDv"/>
+                        <constraint firstAttribute="height" constant="24" id="s4n-HK-Z11"/>
+                    </constraints>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="Alt-Ax-Vik" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="NqL-5P-O70"/>
+                <constraint firstItem="as7-d9-ejZ" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="YmV-r9-V3e"/>
                 <constraint firstItem="Csn-gh-6jH" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="ncQ-4O-pH9"/>
                 <constraint firstAttribute="trailing" secondItem="Csn-gh-6jH" secondAttribute="trailing" constant="20" id="oEZ-DZ-F9W"/>
+                <constraint firstItem="as7-d9-ejZ" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="pvI-2e-7vc"/>
                 <constraint firstItem="QGV-oM-ChA" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="qpg-JE-JLp"/>
                 <constraint firstItem="Alt-Ax-Vik" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="v4A-2U-QeY"/>
                 <constraint firstItem="QGV-oM-ChA" firstAttribute="top" secondItem="Alt-Ax-Vik" secondAttribute="bottom" constant="30" id="xBm-xj-PhT"/>

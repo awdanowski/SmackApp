@@ -20,6 +20,7 @@ class ModalLogin: NSView {
 	@IBOutlet weak var createAccountButton: NSButton!
 	@IBOutlet weak var stackView: NSStackView!
 	
+	@IBOutlet weak var progressSpinner: NSProgressIndicator!
 	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
@@ -49,16 +50,33 @@ class ModalLogin: NSView {
 		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
 	}
 	
+	@IBAction func enterPasswordSent(_ sender: Any) {
+		loginButton.performClick(nil)
+	}
+		
 	@IBAction func loginButtonClicked(_ sender: Any) {
 		
+		print("Login button pressed")
+		
+		progressSpinner.isHidden = false
+		progressSpinner.startAnimation(nil)
+		
+		stackView.alphaValue = 0.4
+		loginButton.isEnabled = false
+		
 		AuthService.instance.loginUser(email: userNameText.stringValue, password: passwordText.stringValue) {
-			(success) in
-			if success {
+			(loginsuccess) in
+			if loginsuccess {
+				print("login was successful")
 				AuthService.instance.findUserByEmail(completion: {
-					(success) in
-					if success {
-						NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
+					(findsuccess) in
+					if findsuccess {
+						print("find by email was successful")
 						
+						self.progressSpinner.stopAnimation(nil)
+						self.progressSpinner.isHidden = true
+						
+						NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
 						NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
 						
 					}
@@ -89,7 +107,7 @@ class ModalLogin: NSView {
 		loginButton.styleButtonText(button: loginButton, buttonName: "Login", fontColor: .white, alignment: .center, font: AVENIR_BOLD, size: 14.0)
 		
 		createAccountButton.styleButtonText(button: createAccountButton, buttonName: "Create account", fontColor: chatGreen, alignment: .center, font: AVENIR_REGULAR, size: 12.0)
-		
-		
+	
 	}
+	
 }

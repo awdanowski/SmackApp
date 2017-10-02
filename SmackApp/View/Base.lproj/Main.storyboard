@@ -750,11 +750,21 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0J4-iK-llQ">
+                                <rect key="frame" x="222" y="235" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="wBq-4I-ecR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="0J4-iK-llQ" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="5n4-VH-Owg"/>
                             <constraint firstItem="1wj-Bt-Vbx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="I8e-R5-BoJ"/>
                             <constraint firstAttribute="trailing" secondItem="1wj-Bt-Vbx" secondAttribute="trailing" id="REe-uR-GxH"/>
                             <constraint firstItem="1wj-Bt-Vbx" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="TFj-fT-2mL"/>
+                            <constraint firstItem="0J4-iK-llQ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="18" id="Ta5-IR-lx9"/>
                             <constraint firstItem="1wj-Bt-Vbx" firstAttribute="top" secondItem="ZS8-mR-dKq" secondAttribute="bottom" constant="8" id="V2Z-8k-laI"/>
                             <constraint firstAttribute="bottom" secondItem="1wj-Bt-Vbx" secondAttribute="bottom" id="VcI-FE-vQs"/>
                             <constraint firstAttribute="trailing" secondItem="ZS8-mR-dKq" secondAttribute="trailing" constant="20" id="aVT-Pe-4gB"/>

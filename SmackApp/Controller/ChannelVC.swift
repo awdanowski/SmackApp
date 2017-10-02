@@ -47,8 +47,9 @@ class ChannelVC: NSViewController {
 		
 		if AuthService.instance.isLoggedIn {
 
-			// ADD CHANNEL
-		
+			let modalDictionary: [String: ModalType] = [USER_INFO_MODAL: ModalType.addChannel]
+			NotificationCenter.default.post(name: NOTIFICATION_PRESENT_MODAL, object: nil, userInfo: modalDictionary)
+			
 		} else {
 			let modalDictionary: [String: ModalType] = [USER_INFO_MODAL: ModalType.login]
 			NotificationCenter.default.post(name: NOTIFICATION_PRESENT_MODAL, object: nil, userInfo: modalDictionary)

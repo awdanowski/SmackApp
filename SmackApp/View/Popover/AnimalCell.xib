@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AnimalCell" customModule="SmackApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdR-Zj-Zko">
+                    <rect key="frame" x="25" y="25" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Rpa-uJ-qaU"/>
+                        <constraint firstAttribute="height" constant="50" id="aR6-Ct-nCj"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="dark12" id="jgX-DA-r6l"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KdR-Zj-Zko" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Lam-UH-Wd4"/>
+                <constraint firstItem="KdR-Zj-Zko" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="QM7-wx-lXo"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="jL8-8w-iwS" customClass="AnimalCell" customModule="SmackApp" customModuleProvider="target"/>
+    </objects>
+    <resources>
+        <image name="dark12" width="100" height="100"/>
+    </resources>
+</document>

@@ -935,18 +935,18 @@
                 </viewController>
                 <customObject id="8eL-dR-sYh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702" y="1112"/>
+            <point key="canvasLocation" x="-137" y="1648"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="SJC-WZ-JBK">
             <objects>
                 <viewController id="4bw-aL-5Kj" customClass="ChatVC" customModule="SmackApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="SL2-jg-lYq">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="393"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ouQ-RU-fKS">
-                                <rect key="frame" x="8" y="263" width="77" height="31"/>
+                                <rect key="frame" x="8" y="356" width="77" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="36E-5t-MeO"/>
                                 </constraints>
@@ -957,7 +957,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T4J-K1-k0q">
-                                <rect key="frame" x="89" y="266" width="177" height="23"/>
+                                <rect key="frame" x="89" y="359" width="177" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This is where we do the chats" id="kx6-WT-cYJ">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -965,13 +965,13 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0m1-7f-ogL">
-                                <rect key="frame" x="0.0" y="116" width="450" height="143"/>
+                                <rect key="frame" x="0.0" y="116" width="450" height="236"/>
                                 <clipView key="contentView" id="Y1f-bv-fCE">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="143"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="236"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="hgu-bi-3Jt">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1096,7 +1096,7 @@
                 </viewController>
                 <customObject id="TlD-JU-gDV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="1604"/>
+            <point key="canvasLocation" x="266" y="1647.5"/>
         </scene>
     </scenes>
     <resources>

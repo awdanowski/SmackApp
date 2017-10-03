@@ -21,6 +21,8 @@ class ModalAddChannel: NSView {
 	@IBOutlet weak var stackView: NSStackView!
 	@IBOutlet weak var progressSpinner: NSProgressIndicator!
 	
+	// Inits
+	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
 		
@@ -33,12 +35,12 @@ class ModalAddChannel: NSView {
 	required init?(coder decoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+
+	// Functions
 	
 	override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
-		// Drawing code here.
-		
 		setUpView()
 
     }
@@ -55,6 +57,8 @@ class ModalAddChannel: NSView {
 		createChannelButton.styleButtonText(button: createChannelButton, buttonName: "Create Channel", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 14.0)
 		
 	}
+	
+	// Actions
 	
 	@IBAction func closeButtonClicked(_ sender: Any) {
 		

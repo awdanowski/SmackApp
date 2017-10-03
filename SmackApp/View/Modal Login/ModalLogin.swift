@@ -22,6 +22,8 @@ class ModalLogin: NSView {
 	
 	@IBOutlet weak var progressSpinner: NSProgressIndicator!
 	
+	// Inits
+	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
 		
@@ -35,15 +37,30 @@ class ModalLogin: NSView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	
+	// Functions
 	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
-        // Drawing code here.
-		
 		setUpView()
     }
+	
+	func setUpView() {
+		
+		self.view.frame = NSRect(x: 0, y: 0, width: 475, height: 300)
+		
+		view.layer?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		view.layer?.cornerRadius = 7
+		
+		loginButton.layer?.backgroundColor = chatGreen.cgColor
+		loginButton.layer?.cornerRadius = 7
+		loginButton.styleButtonText(button: loginButton, buttonName: "Login", fontColor: .white, alignment: .center, font: AVENIR_BOLD, size: 14.0)
+		
+		createAccountButton.styleButtonText(button: createAccountButton, buttonName: "Create account", fontColor: chatGreen, alignment: .center, font: AVENIR_REGULAR, size: 12.0)
+		
+	}
+
+	// Actions
 	
 	@IBAction func closeModalClicked(_ sender: Any) {
 		
@@ -95,19 +112,5 @@ class ModalLogin: NSView {
 		
 	}
 	
-	func setUpView() {
-		
-		self.view.frame = NSRect(x: 0, y: 0, width: 475, height: 300)
-
-		view.layer?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-		view.layer?.cornerRadius = 7
-		
-		loginButton.layer?.backgroundColor = chatGreen.cgColor
-		loginButton.layer?.cornerRadius = 7
-		loginButton.styleButtonText(button: loginButton, buttonName: "Login", fontColor: .white, alignment: .center, font: AVENIR_BOLD, size: 14.0)
-		
-		createAccountButton.styleButtonText(button: createAccountButton, buttonName: "Create account", fontColor: chatGreen, alignment: .center, font: AVENIR_REGULAR, size: 12.0)
-	
-	}
 	
 }

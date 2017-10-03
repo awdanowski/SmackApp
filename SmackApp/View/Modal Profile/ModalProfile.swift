@@ -20,6 +20,9 @@ class ModalProfile: NSView {
 	
 	@IBOutlet weak var logoutButton: NSButton!
 	
+	
+	// Inits
+	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
 		
@@ -33,10 +36,10 @@ class ModalProfile: NSView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	// Functions
+	
 	override func draw(_ dirtyRect: NSRect) {
 		super.draw(dirtyRect)
-		
-		// Drawing code here.
 		
 		setUpView()
 	}
@@ -63,6 +66,9 @@ class ModalProfile: NSView {
 		// TODO - Add Avatar background color
 		
 	}
+	
+	// Actions
+	
 	@IBAction func closeButtonClicked(_ sender: Any) {
 		NotificationCenter.default.post(name: NOTIFICATION_CLOSE_MODAL, object: nil)
 	}

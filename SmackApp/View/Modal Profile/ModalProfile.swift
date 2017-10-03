@@ -61,9 +61,8 @@ class ModalProfile: NSView {
 		avatarImage.layer?.cornerRadius = 10
 		avatarImage.layer?.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 		avatarImage.layer?.borderWidth = 3
+		avatarImage.layer?.backgroundColor = UserDataService.instance.returnCGColor(components: UserDataService.instance.avatarColor)
 		avatarImage.image = NSImage(named: NSImage.Name(rawValue: UserDataService.instance.avatarName))
-		
-		// TODO - Add Avatar background color
 		
 	}
 	

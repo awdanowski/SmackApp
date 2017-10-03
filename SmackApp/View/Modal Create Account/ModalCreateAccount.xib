@@ -11,6 +11,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ModalCreateAccount" customModule="SmackApp" customModuleProvider="target">
             <connections>
                 <outlet property="chooseImageButton" destination="idv-bt-Qh2" id="jJ1-Aj-zoN"/>
+                <outlet property="colorWell" destination="Sir-MT-CHy" id="aOC-Jj-ccR"/>
                 <outlet property="createAccountButton" destination="4Wg-ar-Hss" id="Wr4-kf-613"/>
                 <outlet property="emailText" destination="0vX-j5-y5W" id="pW2-Q5-Ay6"/>
                 <outlet property="nameText" destination="veM-27-kpw" id="pxR-gM-dLe"/>
@@ -240,6 +241,9 @@
                         <constraint firstAttribute="height" constant="23" id="Vl2-Jk-Z7z"/>
                     </constraints>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="colorPicked:" target="-2" id="hAW-EO-vQW"/>
+                    </connections>
                 </colorWell>
             </subviews>
             <constraints>

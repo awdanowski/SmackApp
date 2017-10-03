@@ -61,9 +61,9 @@ class AvatarPickerVC: NSViewController, NSCollectionViewDelegate, NSCollectionVi
 		if let selectedIndexPath = collectionView.selectionIndexPaths.first {
 			
 			if animalType == .dark {
-				UserDataService.instance.updateAvatar(name: "dark\(selectedIndexPath.item)", color: "")
+				UserDataService.instance.updateAvatarName(name: "dark\(selectedIndexPath.item)")
 			} else {
-				UserDataService.instance.updateAvatar(name: "light\(selectedIndexPath.item)", color: "")
+				UserDataService.instance.updateAvatarName(name: "light\(selectedIndexPath.item)")
 			}
 			view.window?.cancelOperation(nil)
 		}

@@ -28,9 +28,13 @@ class UserDataService {
 		
 	}
 	
-	func updateAvatar(name: String = "", color: String = "") {
+	func updateAvatarName(name: String = "") {
 		
 		self.avatarName = name
+	}
+	
+	func updateAvatarColor(color: String = "") {
+		
 		self.avatarColor = color
 	}
 	
@@ -46,5 +50,34 @@ class UserDataService {
 		AuthService.instance.userEmail = ""
 		AuthService.instance.isLoggedIn = false
 		
+	}
+	
+	func returnCGColor(components: String) -> CGColor {
+		
+		let defaultColor = CGColor(red: 0.69, green: 0.85, blue: 0.99, alpha: 1.0)
+		let comma = CharacterSet(charactersIn: ",")
+		let skipped = CharacterSet(charactersIn: "][, ")
+
+		let scanner = Scanner(string: components)
+		scanner.charactersToBeSkipped = skipped
+		
+		var r, g, b, a : NSString?
+		
+		scanner.scanUpToCharacters(from: comma, into: &r)
+		scanner.scanUpToCharacters(from: comma, into: &g)
+		scanner.scanUpToCharacters(from: comma, into: &b)
+		scanner.scanUpToCharacters(from: comma, into: &a)
+		
+		guard let rUnwrapped = r else { return defaultColor }
+		guard let gUnwrapped = g else { return defaultColor }
+		guard let bUnwrapped = b else { return defaultColor }
+		guard let aUnwrapped = a else { return defaultColor }
+
+		let rFloat = CGFloat(rUnwrapped.doubleValue)
+		let gFloat = CGFloat(gUnwrapped.doubleValue)
+		let bFloat = CGFloat(bUnwrapped.doubleValue)
+		// let aFloat = CGFloat(aUnwrapped.doubleValue)
+
+		return CGColor(red: rFloat, green: gFloat, blue: bFloat, alpha: 1.0)
 	}
 }

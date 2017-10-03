@@ -23,6 +23,8 @@ class ModalCreateAccount: NSView, NSPopoverDelegate {
 	@IBOutlet weak var createAccountButton: NSButton!
 	@IBOutlet weak var chooseImageButton: NSButton!
 	
+	@IBOutlet weak var colorWell: NSColorWell!
+	
 	@IBOutlet weak var progressSpinner: NSProgressIndicator!
 	
 	// Variables
@@ -52,8 +54,6 @@ class ModalCreateAccount: NSView, NSPopoverDelegate {
 	
 	override func draw(_ dirtyRect: NSRect) {
 		super.draw(dirtyRect)
-		
-		// Drawing code here.
 		
 		setUpView()
 		
@@ -111,6 +111,7 @@ class ModalCreateAccount: NSView, NSPopoverDelegate {
 				AuthService.instance.loginUser(email: self.emailText.stringValue, password: self.passwordText.stringValue, completion: {
 					(success) in
 					print("Logged In User")
+					print("Current color = \(self.avatarColor)")
 					AuthService.instance.createAccount(name: self.nameText.stringValue, email: self.emailText.stringValue, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: {
 						(success) in
 						print("Created Account")
@@ -132,6 +133,14 @@ class ModalCreateAccount: NSView, NSPopoverDelegate {
 		popOver.behavior = .transient
 	}
 	
+	@IBAction func colorPicked(_ sender: Any) {
+		
+		profileImage.layer?.backgroundColor = colorWell.color.cgColor
+		guard let newColor = colorWell.color.cgColor.components?.description else { return }
+		avatarColor = newColor
+		print(avatarColor)
+	
+	}
 	
 }
 

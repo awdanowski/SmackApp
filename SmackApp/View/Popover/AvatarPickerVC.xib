@@ -20,17 +20,17 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pxB-Pb-rpW">
-                    <rect key="frame" x="138" y="487" width="144" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="140" id="uq0-Dp-6jG"/>
-                    </constraints>
-                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="9gX-b0-U2A">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="132" y="487" width="157" height="23"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="9gX-b0-U2A">
+                        <font key="font" size="13" name="AvenirNext-Regular"/>
                         <segments>
-                            <segment label="Dark" width="69"/>
-                            <segment label="Light" width="68" selected="YES" tag="1"/>
+                            <segment label="Dark" width="75" selected="YES"/>
+                            <segment label="Light" width="75"/>
                         </segments>
                     </segmentedCell>
+                    <connections>
+                        <action selector="segmentChanged:" target="-2" id="YVA-GZ-bor"/>
+                    </connections>
                 </segmentedControl>
                 <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPG-Ij-A5K">
                     <rect key="frame" x="0.0" y="0.0" width="420" height="476"/>
@@ -38,11 +38,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="420" height="476"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView id="8M2-Mo-iiR">
+                            <collectionView selectable="YES" id="8M2-Mo-iiR">
                                 <rect key="frame" x="0.0" y="0.0" width="420" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="zH7-VU-tkt">
                                     <size key="itemSize" width="50" height="50"/>
+                                    <edgeInsets key="sectionInset" left="10" right="10" top="0.0" bottom="10"/>
                                 </collectionViewFlowLayout>
                                 <color key="primaryBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                             </collectionView>

@@ -718,7 +718,7 @@
                                 </connections>
                             </containerView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZS8-mR-dKq">
-                                <rect key="frame" x="394" y="228" width="66" height="24"/>
+                                <rect key="frame" x="378" y="228" width="82" height="24"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ng-2y-psO">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -729,8 +729,11 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="profileDefault" id="r3a-ca-7w2"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-K5-7Zo">
-                                        <rect key="frame" x="30" y="1" width="38" height="23"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Login" id="ahf-pL-mJa">
+                                        <rect key="frame" x="30" y="1" width="54" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Ymv-tW-bBU"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Login" id="ahf-pL-mJa">
                                             <font key="font" size="13" name="AvenirNext-Regular"/>
                                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -739,7 +742,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="dKX-6Z-81X"/>
-                                    <constraint firstAttribute="width" constant="66" id="rgA-1X-pwV"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>

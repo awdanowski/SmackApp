@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AnimalCell" customModule="SmackApp" customModuleProvider="target">
             <connections>
+                <outlet property="animalImage" destination="KdR-Zj-Zko" id="fTc-8X-34Y"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -18,12 +19,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdR-Zj-Zko">
-                    <rect key="frame" x="25" y="25" width="50" height="50"/>
+                    <rect key="frame" x="8" y="8" width="84" height="84"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="Rpa-uJ-qaU"/>
-                        <constraint firstAttribute="height" constant="50" id="aR6-Ct-nCj"/>
+                        <constraint firstAttribute="width" constant="84" id="Rpa-uJ-qaU"/>
+                        <constraint firstAttribute="height" constant="84" id="aR6-Ct-nCj"/>
                     </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="dark12" id="jgX-DA-r6l"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="jgX-DA-r6l"/>
                 </imageView>
             </subviews>
             <constraints>
@@ -33,7 +34,4 @@
         </customView>
         <collectionViewItem id="jL8-8w-iwS" customClass="AnimalCell" customModule="SmackApp" customModuleProvider="target"/>
     </objects>
-    <resources>
-        <image name="dark12" width="100" height="100"/>
-    </resources>
 </document>

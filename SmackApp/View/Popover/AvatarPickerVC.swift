@@ -22,7 +22,7 @@ class AvatarPickerVC: NSViewController, NSCollectionViewDelegate, NSCollectionVi
 	
 	// Variables
 	
-	
+	var animalType = AnimalType.dark
 	
 	// Functions
 	
@@ -31,7 +31,7 @@ class AvatarPickerVC: NSViewController, NSCollectionViewDelegate, NSCollectionVi
 
 		collectionView.delegate = self
 		collectionView.dataSource = self
-		
+				
 	}
 	
 	func numberOfSections(in collectionView: NSCollectionView) -> Int {
@@ -42,15 +42,43 @@ class AvatarPickerVC: NSViewController, NSCollectionViewDelegate, NSCollectionVi
 		return 28
 	}
 	
-	func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-		
-		let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "AnimalCell"), for: indexPath)
-		
-		return cell
-	}
-	
 	func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
 		
 		return NSMakeSize(85.0, 85.0)
 	}
+	
+	func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+		
+		let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "AnimalCell"), for: indexPath)
+		
+		guard let animalCell = cell as? AnimalCell else { return NSCollectionViewItem() }
+		animalCell.configureCell(index: indexPath.item, type: animalType)
+		return cell
+	}
+	
+	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+		
+		if let selectedIndexPath = collectionView.selectionIndexPaths.first {
+			
+			if animalType == .dark {
+				UserDataService.instance.updateAvatar(name: "dark\(selectedIndexPath.item)", color: "")
+			} else {
+				UserDataService.instance.updateAvatar(name: "light\(selectedIndexPath.item)", color: "")
+			}
+			view.window?.cancelOperation(nil)
+		}
+		
+	}
+	
+	// Actions
+	
+	@IBAction func segmentChanged(_ sender: Any) {
+		if segmentControl.selectedSegment == 0 {
+			animalType = .dark
+		} else {
+			animalType = .light
+		}
+		collectionView.reloadData()
+	}
+	
 }

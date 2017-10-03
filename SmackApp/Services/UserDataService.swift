@@ -28,6 +28,12 @@ class UserDataService {
 		
 	}
 	
+	func updateAvatar(name: String = "", color: String = "") {
+		
+		self.avatarName = name
+		self.avatarColor = color
+	}
+	
 	func logoutUser() {
 		
 		self.id = ""

@@ -177,11 +177,11 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-M9-tCj">
+                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-M9-tCj">
                     <rect key="frame" x="255" y="60" width="200" height="146"/>
                     <subviews>
                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5VS-41-Iaj">
-                            <rect key="frame" x="43" y="32" width="114" height="114"/>
+                            <rect key="frame" x="48" y="42" width="104" height="104"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5VS-41-Iaj" secondAttribute="height" multiplier="50:50" id="kMa-gs-GDZ"/>
                             </constraints>

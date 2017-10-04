@@ -16,6 +16,7 @@ let URL_BASE = "https://mychattychatapp.herokuapp.com/v1/"
 let URL_REGISTER = "\(URL_BASE)account/register"
 let URL_LOGIN = "\(URL_BASE)account/login"
 let URL_USER_ADD = "\(URL_BASE)user/add"
+let URL_GET_CHANNELS = "\(URL_BASE)channel"
 
 let URL_USER_BY_EMAIL = "\(URL_BASE)/user/byEmail/"
 

@@ -24,6 +24,8 @@ class ChatVC: NSViewController {
 	
 	let user = UserDataService.instance
 	
+	// Functions
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 	}
@@ -47,7 +49,6 @@ class ChatVC: NSViewController {
 		
 		sendMessageButton.styleButtonText(button: sendMessageButton, buttonName: "Send", fontColor: .darkGray, alignment: .center, font: AVENIR_REGULAR, size: 13.0)
 		
-		
 	}
 	
 	@objc func userDataDidChange(_ notification: Notification) {
@@ -61,7 +62,20 @@ class ChatVC: NSViewController {
 		}
 		
 	}
+	
+	func updateWithChannel(channel: Channel) {
+		
+		typingUsersLabel.stringValue = ""
+		
+		let name = channel.myTitle ?? ""
+		let descriptionText = channel.myDescription ?? ""
+		
+		self.channelTitle.stringValue = name
+		self.channelDescription.stringValue = descriptionText
+	}
 
+	// Actions
+	
 	@IBAction func sendMessageButtonClicked(_ sender: Any) {
 		if AuthService.instance.isLoggedIn {
 			
@@ -80,6 +94,4 @@ class ChatVC: NSViewController {
 			
 		}
 	}
-	
-	
 }

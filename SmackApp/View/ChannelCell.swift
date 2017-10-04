@@ -21,10 +21,19 @@ class ChannelCell: NSTableCellView {
 
      }
 	
-	func configureCell(channel: Channel) {
+	func configureCell(channel: Channel, selectedChannel: Int, currentRow: Int) {
 		
 		let title = channel.myTitle ?? ""
 		channelName.stringValue = "#\(title)"
 		
+		wantsLayer = true
+		
+		if currentRow == selectedChannel {
+			layer?.backgroundColor = chatGreen.cgColor
+			channelName.textColor = NSColor.white
+		} else {
+			layer?.backgroundColor = CGColor.clear
+			channelName.textColor = NSColor.controlColor
+		}
 	}
 }

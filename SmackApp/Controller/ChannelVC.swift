@@ -16,6 +16,12 @@ class ChannelVC: NSViewController {
 	@IBOutlet weak var addChannelButton: NSButton!
 	@IBOutlet weak var tableView: NSTableView!
 	
+	// Variables
+	
+	var selectedChannelIndex = 0
+	var selectedChannel: Channel?
+	var chatVC: ChatVC?
+	
 	// Functions
 	
     override func viewDidLoad() {
@@ -28,6 +34,10 @@ class ChannelVC: NSViewController {
 	override func viewWillAppear() {
 		setUpView()
 		NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
+	}
+	
+	override func viewDidAppear() {
+		chatVC = self.view.window?.contentViewController?.childViewControllers[0].childViewControllers[1] as? ChatVC
 	}
 	
 	func setUpView() {
@@ -89,7 +99,7 @@ extension ChannelVC: NSTableViewDelegate, NSTableViewDataSource {
 		
 		if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "channelCell"), owner: nil) as? ChannelCell {
 			
-			cell.configureCell(channel: channel)
+			cell.configureCell(channel: channel, selectedChannel: selectedChannelIndex, currentRow: row)
 			return cell
 			
 		}
@@ -98,5 +108,14 @@ extension ChannelVC: NSTableViewDelegate, NSTableViewDataSource {
 	
 	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 		return 35.0
+	}
+	
+	func tableViewSelectionDidChange(_ notification: Notification) {
+		selectedChannelIndex = tableView.selectedRow
+		selectedChannel = MessageService.instance.channels[selectedChannelIndex]
+		chatVC?.updateWithChannel(channel: selectedChannel!)
+
+		tableView.reloadData()
+		
 	}
 }

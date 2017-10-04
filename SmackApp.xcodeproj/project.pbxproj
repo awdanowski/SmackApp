@@ -25,6 +25,7 @@
 		1C60D9BE1F7E978C00F65568 /* ModalProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C60D9BD1F7E978C00F65568 /* ModalProfile.xib */; };
 		1C60D9C01F7E97B100F65568 /* ModalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C60D9BF1F7E97B100F65568 /* ModalProfile.swift */; };
 		1C99CA861F7D588B003077AB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99CA851F7D588B003077AB /* AuthService.swift */; };
+		1CDF19491F853E0000058C5B /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF19481F853E0000058C5B /* ChannelCell.swift */; };
 		1CF4776D1F80267D00C8E0E4 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4776C1F80267D00C8E0E4 /* SocketService.swift */; };
 		1CF477721F82B0B300C8E0E4 /* ModalAddChannel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF477711F82B0B300C8E0E4 /* ModalAddChannel.xib */; };
 		1CF477741F82B0DA00C8E0E4 /* ModalAddChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF477731F82B0DA00C8E0E4 /* ModalAddChannel.swift */; };
@@ -59,6 +60,7 @@
 		1C60D9BD1F7E978C00F65568 /* ModalProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalProfile.xib; sourceTree = "<group>"; };
 		1C60D9BF1F7E97B100F65568 /* ModalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProfile.swift; sourceTree = "<group>"; };
 		1C99CA851F7D588B003077AB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1CDF19481F853E0000058C5B /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		1CF4776C1F80267D00C8E0E4 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		1CF477711F82B0B300C8E0E4 /* ModalAddChannel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalAddChannel.xib; sourceTree = "<group>"; };
 		1CF477731F82B0DA00C8E0E4 /* ModalAddChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAddChannel.swift; sourceTree = "<group>"; };
@@ -135,11 +137,9 @@
 				1C0499B81F7AC87B004C846F /* Main.storyboard */,
 				1C0499B61F7AC87B004C846F /* Assets.xcassets */,
 				1C29C4C51F7AF1A00042A790 /* ClickBlockingView.swift */,
-				1CF477701F82B08200C8E0E4 /* Modal Profile */,
-				1C60D9BB1F7E973100F65568 /* Modal Login */,
-				1C60D9BC1F7E973D00F65568 /* Modal Create Account */,
-				1CF477751F83C62300C8E0E4 /* Modal Add Channel */,
+				1CDF194A1F853E0A00058C5B /* Modal Windows */,
 				1CF477761F83C6C500C8E0E4 /* Popover */,
+				1CDF19481F853E0000058C5B /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +188,17 @@
 				1CF477811F8426DE00C8E0E4 /* MessageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1CDF194A1F853E0A00058C5B /* Modal Windows */ = {
+			isa = PBXGroup;
+			children = (
+				1CF477701F82B08200C8E0E4 /* Modal Profile */,
+				1C60D9BB1F7E973100F65568 /* Modal Login */,
+				1C60D9BC1F7E973D00F65568 /* Modal Create Account */,
+				1CF477751F83C62300C8E0E4 /* Modal Add Channel */,
+			);
+			path = "Modal Windows";
 			sourceTree = "<group>";
 		};
 		1CF477701F82B08200C8E0E4 /* Modal Profile */ = {
@@ -373,6 +384,7 @@
 				1CF477791F83C6E500C8E0E4 /* AvatarPickerVC.swift in Sources */,
 				1C0499C61F7ACA3F004C846F /* ToolbarVC.swift in Sources */,
 				1CF477801F84267E00C8E0E4 /* Channel.swift in Sources */,
+				1CDF19491F853E0000058C5B /* ChannelCell.swift in Sources */,
 				1C0499C81F7ACA4E004C846F /* ChannelVC.swift in Sources */,
 				1C99CA861F7D588B003077AB /* AuthService.swift in Sources */,
 				1C60D9BA1F7D853200F65568 /* UserDataService.swift in Sources */,

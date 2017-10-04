@@ -848,13 +848,13 @@
                                     <action selector="addChannelClicked:" target="leP-Wm-Rga" id="srs-V7-cYf"/>
                                 </connections>
                             </button>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnG-b5-YgQ">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="37" horizontalPageScroll="10" verticalLineScroll="37" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnG-b5-YgQ">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="313"/>
                                 <clipView key="contentView" id="rsk-eh-1NB">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="313"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Wd6-db-K04">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="35" rowSizeStyle="automatic" viewBased="YES" id="Wd6-db-K04">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="313"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -874,21 +874,28 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="KPb-Uk-mQr">
-                                                            <rect key="frame" x="1" y="1" width="197" height="17"/>
+                                                        <tableCellView identifier="channelCell" id="KPb-Uk-mQr" customClass="ChannelCell" customModule="SmackApp" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="197" height="35"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMP-JY-s2r">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="1AB-Nc-cZ7">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="yMP-JY-s2r">
+                                                                    <rect key="frame" x="10" y="6" width="164" height="23"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="160" id="XMg-fb-Xph"/>
+                                                                    </constraints>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="#channel" id="1AB-Nc-cZ7">
+                                                                        <font key="font" size="13" name="AvenirNext-Regular"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="yMP-JY-s2r" firstAttribute="leading" secondItem="KPb-Uk-mQr" secondAttribute="leading" constant="12" id="9K6-u9-b48"/>
+                                                                <constraint firstItem="yMP-JY-s2r" firstAttribute="top" secondItem="KPb-Uk-mQr" secondAttribute="top" constant="6" id="Emd-Jt-BVd"/>
+                                                                <constraint firstItem="yMP-JY-s2r" firstAttribute="centerY" secondItem="KPb-Uk-mQr" secondAttribute="centerY" id="jLv-aZ-Fz9"/>
+                                                            </constraints>
                                                             <connections>
+                                                                <outlet property="channelName" destination="yMP-JY-s2r" id="nyC-ew-TuX"/>
                                                                 <outlet property="textField" destination="yMP-JY-s2r" id="coU-hw-UDB"/>
                                                             </connections>
                                                         </tableCellView>

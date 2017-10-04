@@ -16,18 +16,18 @@ class ChannelVC: NSViewController {
 	@IBOutlet weak var addChannelButton: NSButton!
 	@IBOutlet weak var tableView: NSTableView!
 	
+	// Functions
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		tableView.delegate = self
+		tableView.dataSource = self
     }
 	
 	override func viewWillAppear() {
 		setUpView()
 		NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
-		MessageService.instance.findAllChannels { (success) in
-			for channel in MessageService.instance.channels {
-				print(channel.myTitle)
-			}
-		}
 	}
 	
 	func setUpView() {
@@ -42,11 +42,24 @@ class ChannelVC: NSViewController {
 		
 		if AuthService.instance.isLoggedIn {
 			userNameLabel.stringValue = UserDataService.instance.name
+			getChannels()
 		} else {
 			userNameLabel.stringValue = ""
 		}
 		
 	}
+	
+	func getChannels() {
+		MessageService.instance.findAllChannels { (success) in
+			if success {
+				
+				self.tableView.reloadData()
+			}
+		}
+
+	}
+	
+	// Actions
 	
 	@IBAction func addChannelClicked(_ sender: Any) {
 		
@@ -62,4 +75,28 @@ class ChannelVC: NSViewController {
 
 	}
 	
+}
+
+extension ChannelVC: NSTableViewDelegate, NSTableViewDataSource {
+	
+	func numberOfRows(in tableView: NSTableView) -> Int {
+		return MessageService.instance.channels.count
+		
+	}
+	
+	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+		let channel = MessageService.instance.channels[row]
+		
+		if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "channelCell"), owner: nil) as? ChannelCell {
+			
+			cell.configureCell(channel: channel)
+			return cell
+			
+		}
+		return NSTableCellView()
+	}
+	
+	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+		return 35.0
+	}
 }
